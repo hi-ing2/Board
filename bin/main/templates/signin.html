@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- 회원가입을 하기 위한 화면 -->
+<html lang="en">
+<head th:replace="common/head">
+<!--해당경로에 있는 head를 불러오겠다 -->
+</head>
+<body>
+
+	<nav th:replace="common/nav">
+		<!--해당경로에 있는 nav를 불러오겠다 -->
+	</nav>
+
+	<div class="jumbotron">
+		<div class="container text-center">
+			<form method="post" action="/signin">
+				<div class="form-group">
+					<label for="email">Email:</label> <input type="text"
+						class="form-control" id="email" name="email">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password:</label> <input type="password"
+						class="form-control" id="pwd" name="pwd">
+				</div>
+				<button class="btn btn-primary btn-block" id="signin">Sign
+					in</button>
+				<button class="btn btn-danger btn-block" id="signup">Sign <!-- bootstrap에 있는 색상명칭 활용 ex)primary(하늘), danger(빨강) (직접 RGB수치로 해줘도 됨)-->
+					up</button>  <!-- 회원가입 버튼 만들어주기 -->
+			</form>
+		</div>
+	</div>
+
+
+	<footer th:replace="common/footer">
+		<!--해당경로에 있는 footer를 불러오겠다 -->
+
+	</footer>
+	<script>
+		$("#signin").click(function() {
+			$("form").submit();
+			return false;
+		});
+		$("#signup").click(function() {
+			location = "/signup"; //경로 위치 지정
+			return false;
+		});
+	</script>
+
+</body>
+</html>

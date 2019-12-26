@@ -1,0 +1,46 @@
+<!DOCTYPE html> <!-- 회원가입을 하기 위한 화면 -->
+<html lang="en">
+<head th:replace="common/head">
+<!--해당경로에 있는 head를 불러오겠다 -->
+</head>
+<body>
+
+	<nav th:replace="common/nav">
+		<!--해당경로에 있는 nav를 불러오겠다 -->
+	</nav>
+
+	<div class="jumbotron">
+		<div class="container text-center">
+			<form method="post" action="/signup">
+				<div class="form-group">
+					<label for="email">Email:</label> <input type="text"
+						class="form-control" id="email" name="email">
+					<!-- name이 꼭 들어가야 함  (고유값으로 인식시켜놓음) -->
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password:</label> <input type="password"
+						class="form-control" id="pwd" name="pwd">
+				</div>
+				<div class="form-group">
+					<label for="name">Name:</label> <input type="text"
+						class="form-control" id="name" name="name">
+				</div>
+				<button class="btn btn-primary btn-block" id="signup">Sign
+					Up</button>
+			</form>
+		</div>
+	</div>
+
+	<footer th:replace="common/footer">
+		<!--해당경로에 있는 footer를 불러오겠다 -->
+
+	</footer>
+	<script>
+		$("#signup").click(function() {
+			$("form").submit();
+			return false;
+		});
+	</script>
+
+</body>
+</html>
